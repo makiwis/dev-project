@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book's store</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="boton-cerrar" onclick="ocultarListadedeseos()">&times;</a>
+        <div class="cont-sidebar">
+            <h3>Mi lista de lectura</h3>
+            <div class="item-lista">
+                <img src="./img/books/la-seleccion.jpg">
+                <div>
+                <h4>La Selección</h4>
+                <a href="detalle-libro-laseleccion.html">Ver libro</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="sub"></div>
+        <header class="header">
+            <nav>
+                <ul>
+                    <li><a href="#novedades">Novedades</a></li>
+                    <li ><a href="#categorias">Categorías</a></li>
+                    <li><a class="logo"><img src="./img/logo.svg"></a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li id="abrir" class="abrir-cerrar" onclick="mostrarListadedeseos()">Lista de lectura <img src="./img/readbook.svg" class="img-rb"></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="banner">
+        </div>
+    </div>
+    <div class="container div-novedades" id="novedades">
+        <h2 class="tit-principal tit-yellow" >Novedades</h2>
+        <div class="contenedor-novedad">
+            <div class="novedad">
+                <img src="./img/books/la-seleccion.jpg">
+                <div>
+                    <h3>La Selección</h3>
+                    <p>La Selección es una novela romántica con una trama más propia de las novelas de fantasía épica que de las distopías.</p>
+                    <a href="detalle-libro-laseleccion.html">Ver libro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container div-categorias" id="categorias">
+        <h2 class="tit-principal tit-yellow" >Categorías</h2>
+        <!--<div class="cont-categorias">
+            <ul>
+                <li class="cat-active">Todos</li>
+                <li>Fantasía</li>
+                <li>Misterio</li>
+                <li>Romance</li>
+                <li>Sagas</li>
+            </ul>
+        </div>-->
+        <div class="cont-resultado-cat" id="cont-resultado-cat">
+            <div class="elem-categoria cat-romance">
+                <span>Romance</span>
+                <h3>Esos ojos</h3>
+                <img src="./img/books/esosojos.jpg">
+                <p>Nuestros ojos se encontrarían, habría conexión. Era nuestro secreto. ¿Cómo pude olvidarlo? Él era mi vida...</p>
+                <a class="btn-verlibro">Ver libro</a>
+            </div>
+            <div class="elem-categoria cat-fantasia">
+                <span>Fantasia</span>
+                <h3>Game of thrones</h3>
+                <img src="./img/books/got.jpg">
+                <p>En un mundo fantástico y en un contexto medieval varias familias, relativas a la nobleza, se disputan el poder para dominar el territorio  de Poniente...</p>
+                <a class="btn-verlibro">Ver libro</a>
+            </div>
+            <div class="elem-categoria cat-misterio">
+                <span>Misterio</span>
+                <h3>La pareja de al lado</h3>
+                <img src="./img/books/laparejadeallado.jpg">
+                <p>Nunca se sabe lo que ocurre en la casa de al lado. Dos parejas, dos casas y una montaña rusa de mentiras, traición y secretos entre maridos y mujeres...</p>
+                <a class="btn-verlibro">Ver libro</a>
+            </div>
+            <div class="elem-categoria cat-fantasia">
+                <span>Fantasia</span>
+                <h3>Percy Jackson</h3>
+                <img src="./img/books/percyjackson2.jpg">
+                <p>¿Qué pasaría si un día descubrieras que, en realidad, eres hijo de un dios griego que debe cumplir una misión secreta? Pues eso es lo que le sucede a Percy Jackson, que a partir de ese momento se dispone a vivir los acontecimientos más emocionantes de su vida...</p>
+                <a class="btn-verlibro" href="detalle-libro-percy.html">Ver libro</a>
+            </div>
+            <div class="elem-categoria cat-romance">
+                <span>Romance</span>
+                <h3>Yo antes de tí</h3>
+                <img src="./img/books/pack-saga-antes-de-ti.jpg">
+                <p>Louisa una chica inestable y creativa, reside en un pequeño pueblo de la campiña inglesa. Vive sin rumbo y va de un trabajo a otro para ayudar a su familia a llegar a fin de mes. Sin embargo, un nuevo trabajo pondrá a prueba su habitual alegría...</p>
+                <a class="btn-verlibro">Ver libro</a>
+            </div>
+        </div>
+    </div>
+    <div class="container div-agregarlibro">
+        <div class="contenedor-agregarlibro">
+            <h2>¿Quieres agregar un libro?</h2>
+            <button type="button" id="myBtn">¡Hazlo aquí!</button>
+        </div>
+    </div>
+    <div class="container div-contacto" id="contacto">
+        <div class="cont-form">
+            <h2>Contacto</h2>
+            <form>
+                <label>Nombre completo</label>
+                <input type="text" name="nombre" id="nombre">
+                <label>Email</label>
+                <input type="mail" id="correo">
+                <label>Comentario</label>
+                <textarea class="" rows="3" id="comentario"></textarea>
+                <button type="submit" onclick="agregarRegistro();">Enviar</button>
+            </form>
+        </div>
+        
+    </div>
+    <div class="containe footer">
+
+    </div>
+    <!-- MODAL -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <div class="formulario">
+                <form action="">
+                    <h3>Agregar Libro</h3>
+                    <label for="">Titulo del libro</label>
+                    <input type="text" name="" id="pName" placeholder="Ingrese el nombre del producto">
+
+                    <label for="">Sinopsis</label>
+                    <input type="text" name="" id="pDescript" placeholder="Ingrese el precio del producto">
+
+                    <label for="">Categoria</label>
+                    <select name="" id="sCategory">
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Misterio">Misterio</option>
+                        <option value="otros">Todos</option>
+                    </select>
+
+                    <input type="file" name="" id="pDocument">
+
+                    <div class="text-center"><button type="button" onclick="addProduct()">Agregar libro</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

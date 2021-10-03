@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book's store</title>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="pag-detalle">
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="boton-cerrar" onclick="ocultarListadedeseos()">&times;</a>
+        <div class="cont-sidebar">
+            <h3>Mi lista de lectura</h3>
+            <div class="item-lista">
+                <img src="./img/books/la-seleccion.jpg">
+                <div>
+                <h4>La Selección</h4>
+                <a href="detalle-libro-laseleccion.html">Ver libro</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="sub"></div>
+        <header class="header">
+            <nav>
+                <ul>
+                    <li><a href="index.html#novedades">Novedades</a></li>
+                    <li ><a href="index.html#categorias">Categorías</a></li>
+                    <li><a class="logo" href="index.html"><img src="./img/logo.svg"></a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li id="abrir" class="abrir-cerrar" onclick="mostrarListadedeseos()">Lista de lectura <img src="./img/readbook.svg" class="img-rb"></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="banner-detalle">
+        </div>
+    </div>
+    <div class="container div-detalle">
+        
+        <div class="div-left">
+            <h2 class="tit-principal-detalle">Percy Jackson</h2>
+            <p>¿Qué pasaría si un día descubrieras que, en realidad, eres hijo de un dios griego que debe cumplir una misión secreta? Pues eso es lo que le sucede a Percy Jackson, que a partir de ese momento se dispone a vivir los acontecimientos más emocionantes de su vida.</p><br>    
+            <p>Expulsado de seis colegios, Percy padece dislexia y dificultades para concentrarse, o al menos ésa es la versión oficial. Objeto de burlas por inventarse historias fantásticas, ni siquiera él mismo acaba de creérselas hasta el día que los dioses del Olimpo le revelan la verdad: Percy es nada menos que un semidiós, es decir, el hijo de un dios y una mortal. Y como tal ha de descubrir quién ha robado el rayo de Zeus y así evitar que estalle una guerra entre los dioses. Para cumplir la misión contará con la ayuda de sus amigos Grover, un joven sátiro, y Annabeth, hija de Atenea.</p>
+            <p>El ladrón del rayo da comienzo a la apasionante serie PERCY JACKSON Y LOS DIOSES DEL OLIMPO, un mundo secreto que los antiguos dioses griegos han recreado a nuestro alrededor en pleno siglo XXI.</p>
+            <button type="button">Agregar a mi lista de lectura</button>
+        </div>
+        <div class="div-right">
+            <img src="img/books/percyjackson.jpg">
+        </div>
+    </div>
+    <div class="container div-categorias">
+        <h2 class="tit-principal tit-blue">Últimos agregados</h2>
+        <div class="cont-resultado-cat" id="cont-resultado-cat">
+            <div class="elem-categoria">
+                <span>Romance</span>
+                <h3>Esos ojos</h3>
+                <img src="./img/books/esosojos.jpg">
+                <button type="button" class="btn-verlibro">Ver libro</button>
+            </div>
+            <div class="elem-categoria">
+                <span>Fantasia</span>
+                <h3>Game of thrones</h3>
+                <img src="./img/books/got.jpg">
+                <button type="button" class="btn-verlibro">Ver libro</button>
+            </div>
+            <div class="elem-categoria">
+                <span>Misterio</span>
+                <h3>La pareja de al lado</h3>
+                <img src="./img/books/laparejadeallado.jpg">
+                <button type="button" class="btn-verlibro">Ver libro</button>
+            </div>
+            <div class="elem-categoria">
+                <span>Fantasia</span>
+                <h3>Percy Jackson</h3>
+                <img src="./img/books/percyjackson2.jpg">
+                <button type="button" class="btn-verlibro">Ver libro</button>
+            </div>
+            <div class="elem-categoria">
+                <span>Romance</span>
+                <h3>Yo antes de tí</h3>
+                <img src="./img/books/pack-saga-antes-de-ti.jpg">
+                <button type="button" class="btn-verlibro">Ver libro</button>
+            </div>
+        </div>
+    </div>
+    <div class="container div-agregarlibro">
+        <div class="contenedor-agregarlibro">
+            <h2>¿Quieres agregar un libro?</h2>
+            <button type="button" id="myBtn">¡Hazlo aquí!</button>
+        </div>
+    </div>
+    <div class="containe footer">
+
+    </div>
+    <!-- MODAL -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <div class="formulario">
+                <form action="">
+                    <h3>Agregar Libro</h3>
+                    <label for="">Titulo del libro</label>
+                    <input type="text" name="" id="pName" placeholder="Ingrese el nombre del producto">
+
+                    <label for="">Sinopsis</label>
+                    <input type="text" name="" id="pDescript" placeholder="Ingrese el precio del producto">
+
+                    <label for="">Categoria</label>
+                    <select name="" id="sCategory">
+                        <option value="Fantasia">Fantasia</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Misterio">Misterio</option>
+                        <option value="otros">Todos</option>
+                    </select>
+
+                    <input type="file" name="" id="pDocument">
+
+                    <div class="text-center"><button type="button" onclick="addProduct()">Agregar libro</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/modal.js"></script>
+    <script src="./js/scripts.js"></script>
+    
+</body>
+</html>
